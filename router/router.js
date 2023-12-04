@@ -35,15 +35,7 @@ const urlLocationHandler = async () => {
 };
 
 window.onpopstate = urlLocationHandler;
+window.onload = urlLocationHandler;
 window.route = urlRoute;
 
 urlLocationHandler();
-
-(function(history){
-    var pushState = history.pushState;
-    history.pushState = function(state) {
-      console.log(state)
-      urlLocationHandler()
-      return pushState.apply(history, arguments);
-    };
-})(window.history);
