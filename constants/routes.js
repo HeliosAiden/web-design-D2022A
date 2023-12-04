@@ -1,24 +1,24 @@
 const originURL = window.location.origin
-const concatURL = path => {return `${originURL}/${path}`}
+console.log(originURL)
 
 export const urlRoutes = {
     404: {
-        pathName: concatURL("/pages/404.html"),
+        pathName: "/pages/404.html",
         title: "",
         description: "",
     },
     "/": {
-        pathName: concatURL("/pages/index.html"),
+        pathName: "/pages/index.html",
         title: "",
         description: "",
     },
     "/about": {
-        pathName: concatURL("/pages/about.html"),
+        pathName: "/pages/about.html",
         title: "",
         description: "",
     },
     "/contact": {
-        pathName: concatURL("/pages/contact.html"),
+        pathName: "/pages/contact.html",
         title: "",
         description: "",
     },

@@ -1,4 +1,5 @@
 import { urlRoutes } from "../constants/routes.js";
+const rootURL = 'web-design-D2022A/'
 
 document.addEventListener("click", e => {
     const {target} = e
@@ -22,7 +23,7 @@ const urlLocationHandler = async() => {
 
     const route = urlRoutes[location] || urlRoutes[404];
     console.log(route.pathName)
-    const html = await fetch(route.pathName).then(res => res.text());
+    const html = await fetch(`${rootURL}/${route.pathName}`).then(res => res.text());
     document.getElementById("content").innerHTML = html;
 }
 
