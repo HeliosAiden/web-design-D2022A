@@ -1,5 +1,6 @@
-const originURL = window.location.origin
-console.log(originURL)
+
+
+export const rootURL = 'web-design-D2022A'
 
 export const urlRoutes = {
     404: {
