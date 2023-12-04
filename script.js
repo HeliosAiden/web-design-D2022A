@@ -1,1 +1,1 @@
-document.getElementById('init').click
+document.getElementById('init').click();
