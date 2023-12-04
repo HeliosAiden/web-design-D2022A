@@ -21,6 +21,7 @@ const urlLocationHandler = async() => {
     }
 
     const route = urlRoutes[location] || urlRoutes[404];
+    console.log(route.pathName)
     const html = await fetch(route.pathName).then(res => res.text());
     document.getElementById("content").innerHTML = html;
 }
