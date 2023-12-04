@@ -31,7 +31,7 @@ const urlLocationHandler = async () => {
   document.title = route.title;
   document
     .querySelector('meta[name="description"]')
-    .setAttribute("content", route.description);
+    .setAttribute("content", route.description ?? "something");
 };
 
 window.onpopstate = urlLocationHandler;
