@@ -1,5 +1,3 @@
-
-
 export const rootURL = 'web-design-D2022A'
 
 export const urlRoutes = {

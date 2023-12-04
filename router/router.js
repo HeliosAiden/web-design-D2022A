@@ -21,6 +21,8 @@ const urlLocationHandler = async () => {
   }
 
   const route = urlRoutes[location] || urlRoutes[404];
+  console.log(route)
+  console.log(`${rootURL}${route.pathName}`)
   const html = await fetch(`${rootURL}${route.pathName}`).then((res) =>
     res.text()
   );
@@ -34,13 +36,7 @@ const urlLocationHandler = async () => {
     .setAttribute("content", route.description ?? "something");
 };
 
-const checkLocation = () => {
-    const location = window.location.pathname;
-    Object.keys(urlRoutes).map(key => {if (key == location) urlLocationHandler()})
-}
-
 window.onpopstate = urlLocationHandler;
-window.onload = checkLocation;
 window.route = urlRoute;
 
 urlLocationHandler();
