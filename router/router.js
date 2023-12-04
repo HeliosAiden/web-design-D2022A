@@ -16,7 +16,7 @@ const urlRoute = (event) => {
 
 const urlLocationHandler = async () => {
   const location = window.location.pathname;
-  if (location.length == 0) {
+  if (location == rootURL) {
     location = "/";
   }
 
@@ -24,6 +24,9 @@ const urlLocationHandler = async () => {
   const html = await fetch(`${rootURL}${route.pathName}`).then((res) =>
     res.text()
   );
+  if (!document) {
+    window.location.replace(`${window.location.origin}/${rootURL}`)
+  };
   document.getElementById("content").innerHTML = html;
   document.title = route.title;
   document
