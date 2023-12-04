@@ -34,8 +34,13 @@ const urlLocationHandler = async () => {
     .setAttribute("content", route.description ?? "something");
 };
 
+const checkLocation = () => {
+    const location = window.location.pathname;
+    Object.keys(urlRoutes).map(key => {if (key == location) urlLocationHandler()})
+}
+
 window.onpopstate = urlLocationHandler;
-window.onload = urlLocationHandler;
+window.onload = checkLocation;
 window.route = urlRoute;
 
 urlLocationHandler();
